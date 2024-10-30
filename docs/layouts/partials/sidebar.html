@@ -1,6 +1,15 @@
 {{- $ctx := . -}}
 
 <div class="bg-light border-right" id="sidebar-wrapper">
+<div id="pagefindsearch" class=""></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#pagefindsearch",
+                         baseUrl: "{{ .Site.BaseURL|relURL }}/",
+                         showSubResults: true,
+                         showImages: false });
+    });
+</script>
 
 {{ range .Site.Menus.sidebar -}}
 
